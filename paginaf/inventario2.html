@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="inventario2.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div id="contenedor">
+    <header>
+      <h1>Control de inventario</h1>
+    </header>
+    <nav>
+      
+        <ul>
+          <a href="#">
+            <section id="ventana1">
+              <input type="checkbox" id="btn-modal2">
+              <label for="btn-modal2" class="lbl-modal2">
+                <li>
+                  Añadir
+                  <span></span><span></span><span></span><span></span>
+  
+                </li>
+              </label>
+              <div class="modal2">
+                <div class="contenedor2">
+                  <header>Añadir elemento</header>
+                  <div class="contenido2">
+                    <h3>NO</h3>
+                    <p>Hay</p>
+                    <label for="btn-modal2" class="cer2"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </a>
+          
+          <a href="#">
+            <section id="ventana3">
+              <input type="checkbox" id="btn-modal3">
+              <label for="btn-modal3" class="lbl-modal3">
+                <li>
+                  Ayuda
+                  <span></span><span></span><span></span><span></span>
+  
+                </li>
+              </label>
+              <div class="modal3">
+                <div class="contenedor3">
+                  <header>¡Ayuda!</header>
+                  <div class="contenido3">
+                    <h3>NO</h3>
+                    <p>Hay</p>
+                    <label for="btn-modal3" class="cer3"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+  
+          </a>
+          </a>
+          <a href="#">
+            <section id="ventana4">
+              <input type="checkbox" id="btn-modal4">
+              <label for="btn-modal4" class="lbl-modal4">
+                <li>
+                  Modificar
+                  <span></span><span></span><span></span><span></span>
+  
+                </li>
+              </label>
+              <div class="modal4">
+                <div class="contenedor4">
+                  <header>Modificar inventario</header>
+                  <div class="contenido4">
+                    <h3>NO</h3>
+                    <p>Hay</p>
+                    <label for="btn-modal4" class="cer4"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                  </div>
+                </div>
+              </div>
+            </section>
+  
+          </a>
+          <a href="inventario.html">
+          <li>
+            Salir
+            <span></span><span></span><span></span><span></span>
+          </li>
+          </a>
+          
+        </ul>
+      
+    </nav>
+    <section id="contenido">
+      <article>
+        <div class="container">
+          <table>
+              <thead>
+                  <tr>
+                    <th>ㅤㅤㅤ ID</th>
+                    <th>ㅤElemento</th>
+                    <th>ㅤEncargado</th>
+                    <th>ㅤCodigo de ㅤㅤbarras</th>
+                    <th>ㅤCodigo  ㅤ ㅤ ㅤ serial</th>
+                    <th>ㅤCantidad</th>
+                    <th>Descripcion</th>
+                    <th colspan="2"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                <!--
+                <?php
+                include("conexion.php");
+                
+                $sql5 = "SELECT elementos.nombre_elementos, elementos.cantidad_elementos, categorias.nombre_categoria
+                FROM elementos
+                INNER JOIN categorias ON elementos.id_categorias = categorias.id_categorias;";
+
+                $resultado5 = $conexion->query($sql5);
+
+                if ($resultado5->num_rows > 0) {
+                    while ($fila5 = $resultado5->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $fila5["nombre_elementos"] . "</td>";
+                        echo "<td>" . $fila5["cantidad_elementos"] . "</td>";
+                        echo "<td>" . $fila5["nombre_categoria"] . "</td>";
+                        echo "<td><a href='#' class='btn-custom'>Eliminar</a>ㅤ<a href='#' class='btn-custom'>Editar</a></td>";
+                        echo "</tr>";
+  
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>No se encontraron datos.</td></tr>";
+                }
+                $conexion->close();
+
+              ?>
+              -->
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Motosierra</td>
+                    <td>juan hito</td>
+                    <td>4577676577</td>
+                    <td>3695269357</td>
+                    <td>369</td>
+                    <td>joiiuhugih</td>
+                    <td><a href="" class="btn-custom">Eliminar</a></td>
+                    <td><a href="" class="btn-custom">Editar</a></td>
+                  </tr>
+
+              </tbody>
+          </table>
+      </div>
+      
+      </article>
+      
+    </section>
+    <footer>
+      <h2>Informacion importante</h2>
+    </footer>
+</body>
+</html>

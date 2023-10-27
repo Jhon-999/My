@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="inventario.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <!--
+   <?php
+    include ("conexion.php");
+   ?>
+   -->
+  <div id="contenedor">
+    <header>
+      <h1>Control de inventarios</h1>
+    </header>
+    <nav>
+
+      <ul>
+        <a href="#">
+          <section id="ventana1">
+            <input type="checkbox" id="btn-modal2">
+            <label for="btn-modal2" class="lbl-modal2">
+              <li>
+                Crear
+                <span></span><span></span><span></span><span></span>
+
+              </li>
+            </label>
+            <div class="modal2">
+              <div class="contenedor2">
+                <header>Crear inventario</header>
+                <div class="contenido2">
+                  <form action="crearInven.php" method="post">
+                    <h3>Codigo de Barras</h3>
+                    <input type="text" name ="codigoBarra" placeholder="Ingresa el codiogo de barras">
+                    <h3>centro</h3>
+                    <h3>Codigo Serial</h3>
+                    <input type="text" name ="codigoSerial" placeholder="Ingresa el codigo serial">
+                        <!--
+                        <?php
+                          $sql1 = "SELECT id_centro, nombre_centro FROM centro";
+                          $resultado1 = $conexion->query($sql1);
+
+                          if ($resultado1->num_rows > 0) {
+                              echo '<select name="centro">';
+                              while ($fila1 = $resultado1->fetch_assoc()) {
+                                  echo '<option value="' . $fila1['id_centro'] . '">' . $fila1['nombre_centro'] . '</option>';
+                              }
+                              echo '</select>';
+                          } else {
+                              echo "No se encontraron datos.";
+                          }
+
+                         echo "<h3>ubicacion</h3>";
+                        
+                          $sql2 = "SELECT id_ubicacion, nombre_ubicacion FROM ubicacion";
+                          $resultado2 = $conexion->query($sql2);
+
+                          if ($resultado2->num_rows > 0) {
+                              echo '<select name="ubicacion">';
+                              while ($fila2 = $resultado2->fetch_assoc()) {
+                                  echo '<option value="' . $fila2['id_ubicacion'] . '">' . $fila2['nombre_ubicacion'] . '</option>';
+                              }
+                              echo '</select>';
+                          } else {
+                              echo "No se encontraron datos.";
+                          }
+
+                          echo "<h3>sede</h3>";
+
+                          $sql3 = "SELECT id_sede, nombre_sede FROM sede";
+                          $resultado3 = $conexion->query($sql3);
+
+                          if ($resultado3->num_rows > 0) {
+                              echo '<select name="sede">';
+                              while ($fila3 = $resultado3->fetch_assoc()) {
+                                  echo '<option value="' . $fila3['id_sede'] . '">' . $fila3['nombre_sede'] . '</option>';
+                              }
+                              echo '</select>';
+                          } else {
+                              echo "No se encontraron datos.";
+                          }
+                          $conexion->close();
+                        ?>
+                        -->
+                        <input type="button" value="Crear" style="background: green; border-radius: 15px;">
+                  </form>
+                  <label for="btn-modal2" class="cer2"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                </div>
+              </div>
+            </div>
+          </section>
+        </a>
+        <a href="#">
+          <section id="ventana3">
+            <input type="checkbox" id="btn-modal3">
+            <label for="btn-modal3" class="lbl-modal3">
+              <li>
+                Ayuda
+                <span></span><span></span><span></span><span></span>
+
+              </li>
+            </label>
+            <div class="modal3">
+              <div class="contenedor3">
+                <header>¡Ayuda!</header>
+                <div class="contenido3">
+                  <h3>NO</h3>
+                  <p>Hay</p>
+                  <label for="btn-modal3" class="cer3"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </a>
+
+        <a href="inventario3.html">
+          <li>
+            Historial
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </a>
+
+        <a href="inicio.html">
+          <li>
+            Salir
+            <span></span><span></span><span></span><span></span>
+          </li>
+        </a>
+
+      </ul>
+
+    </nav>
+    <section id="contenido">
+      <article>
+        <div class="container">
+          <table>
+            <thead>
+              <tr>
+                <th>ㅤㅤㅤEncargado</th>
+                <th>ㅤㅤㅤUbicacion</th>
+                <th>ㅤ ㅤ ㅤ ㅤSede</th>
+                <th>ㅤㅤㅤㅤCentro</th>
+                
+                
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            <!--
+            <?php
+              include("conexion.php");
+              
+              $sql5 = "SELECT usuarios.nombre_usuario, centro.nombre_centro, sede.nombre_sede, inventario.nom_inventario, ubicacion.nombre_ubicacion
+                      FROM usuarios
+                      INNER JOIN elementos ON usuarios.id_usuarios = elementos.id_usuarios
+                      INNER JOIN inventario ON elementos.id_elemento = inventario.id_elemento
+                      INNER JOIN ubicacion ON inventario.id_ubicacion = ubicacion.id_ubicacion
+                      INNER JOIN sede ON ubicacion.id_sede = sede.id_sede
+                      INNER JOIN centro ON centro.id_centro = sede.id_centro;";
+
+              $resultado5 = $conexion->query($sql5);
+
+              if ($resultado5->num_rows > 0) {
+                  while ($fila5 = $resultado5->fetch_assoc()) {
+                      echo "<tr>";
+                      echo "<td>" . $fila5["nombre_usuario"] . "</td>";
+                      echo "<td>" . $fila5["nombre_centro"] . "</td>";
+                      echo "<td>" . $fila5["nombre_sede"] . "</td>";
+                      echo "<td>" . $fila5["nombre_ubicacion"] . "</td>";
+                      echo "<td>ㅤ<a href='inventario2.html' class='btn-custom'>Ver</a> </td>";
+                      echo "</tr>";
+                    
+                  }
+              } else {
+                  echo "<tr><td colspan='5'>No se encontraron datos.</td></tr>";
+              }
+              $conexion->close();
+
+            ?>
+            -->
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+              <tr>
+                <td>YO</td>
+                <td>bodega3</td>
+                <td>Sede 2</td>
+                <td>Centro</td>
+                <td>ㅤ<a href="inventario2.html" class="btn-custom">Ver</a> </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </article>
+
+    </section>
+    <footer>
+      <h2>Informacion importante</h2>
+    </footer>
+</body>
+
+</html>

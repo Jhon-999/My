@@ -1,0 +1,18 @@
+#cuerpo{
+    align-items: center;
+}
+#cerrar{
+    border-radius: 5px;
+    border-color: black;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #ce5708ee;
+    color: beige;
+    width: 92px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}

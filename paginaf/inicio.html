@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="botones.css">
+    
+</head>
+
+<body>
+    <section id="ventana1">
+        <input type="checkbox" id="btn-modal2">
+        <label for="btn-modal2" class="lbl-modal2"><img src="icons8-help-48.png" alt="ayuda" id="ayuda"></label>
+        <div class="modal2">
+            <div class="contenedor2">
+                <header>¡Ayuda!</header>
+                <div class="contenido2">
+                    <h3>Asegurate de:</h3>
+                    <ul>
+                        <li>Llenar todos los espacios</li>
+                        <li>Todos los datos ingresados sean correctos</li>
+                        <li>En el caso de no tener la puedes crear</li>
+                        <li>Puedes recuperar con la obcion de abajo</li>
+                    </ul>
+                
+                    <label for="btn-modal2" class="cer2"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="fondo"></div>
+    <a href="#"><img src="logo_sena.png" alt="logo" id="logo"></a>
+    
+    <div class="cabezai">
+        <h3 class="een">Inicio de sesion</h3>
+    </div>
+    <div id="hijo1">
+
+        <br>
+        <form action="inventario.html" method="post">
+            <h3>CC</h3>
+            <div class="co">
+                <input type="text" name="cc" placeholder="Ingrese su cc" id="tes">
+            </div>
+            <span id="span2">
+                <i class="fa fa-id-card" aria-hidden="true"></i>
+            </span>
+            <br>
+            <h3>Contraseña</h3>
+            <div class="paa">
+                <input type="password" name="contrasena" placeholder="Ingrese la contraseña" id="password"> </input>
+            </div>
+            <span>
+                <i class="fa fa-eye" aria-hidden="true" id="eye" onclick="toggle()"></i>
+            </span>
+            <br>
+            <br>
+            <Div class="o"> 
+                <button type="submit" class="cta">
+                    <span>Iniciar</span>
+                    <svg width="13px" height="10px" viewBox="0 0 13 10">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button></Div>
+
+        </form>
+
+        <br>
+
+        <div id="con">
+            <a href="crearc.html">Crear cuenta</a>
+            <br>
+            <br>
+            <a><section id="ventana3">
+                <input type="checkbox" id="btn-modal3">
+                <label for="btn-modal3" class="lbl-modal3">Recuperar contraseña</label>
+                <div class="modal3">
+                    <div class="contenedor3">
+
+                        <header title="La nueva contraseña te llegara en el correo">¿Como recuperar la contraseña?</header>
+                        <div class="contenido3">
+                            <form action="" method="post">
+                                <h3>Correo</h3>
+                            <br>
+                            <input type="text" name="correo" id="" placeholder="Ingresa el correo"></input>
+                            <br>
+                            <br>
+                            <input type="button" value="Recuperar" style="background: green;">
+                            <br>
+                            </form>
+                            
+                            <label for="btn-modal3" class="cer3"><img id="cerrar" src="icons8-x-48.png" alt="x"></label>
+                        </div>
+                    </div>
+                </div>
+            </section></a>
+
+            <br>
+
+        </div>
+
+    </div>
+    <footer>
+        <h2>Eesto es un mensaje anti-plagio</h2>
+      </footer>
+    <script>
+        var state = false;
+        function toggle() {
+            if (state) {
+                document.getElementById("password").
+                    setAttribute("type", "password");
+                document.getElementById("eye").style.color = '#7a797e';
+                state = false;
+            }
+
+            else {
+                document.getElementById("password").
+                    setAttribute("type", "text");
+                document.getElementById("eye").style.color = '#39a900';
+                state = true;
+            }
+        }
+
+        var a = document.getElementById('b1');
+        a.addEventListener('click', function(){
+            document.getElementById('cuerpo1').style.display = "none"
+        });
+
+        function abrir() {
+            document.getElementById("cuerpo1").style.display = "block"
+        }
+
+        function abrirVentana() {
+            // Especifica las propiedades de la nueva ventana
+            const opcionesVentana = "width=400,height=300,location=no,toolbar=no,menubar=no";
+
+            // Abre una nueva ventana con las propiedades especificadas
+            const nuevaVentana = window.open("recuperarc.html", "VentanaNueva", opcionesVentana);
+
+        }
+        
+    </script>
+
+</body>
+
+</html>

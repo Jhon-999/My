@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abrir ventana pequeña en otra pestaña</title>
+</head>
+<body>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+
+    <script>
+        function abrirVentana() {
+            // Especifica las propiedades de la nueva ventana
+            const opcionesVentana = "width=400,height=300,location=no,toolbar=no,menubar=no";
+
+            // Abre una nueva ventana con las propiedades especificadas
+            const nuevaVentana = window.open("inicio.html", "VentanaNueva", opcionesVentana);
+
+        }
+    </script>
+</body>
+</html>

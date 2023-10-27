@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="botones.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="fondo"></div>
+    <a href="#"><img src="logo_sena.png" alt="logo" id="logo"></a>
+
+    <div class="titi">
+        <h3 class="eee">Crear cuenta</h3>
+    </div>
+    <div id="div2">
+        <form action="crearc.php">
+            <br>
+            <div id="span3">
+                <span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                </div>
+            <h5> Nombres</h5>
+            <input type="text" name="nombre" placeholder="Digite los nombres" id="tes">
+            
+            <br>
+            <div id="span3">
+                <span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                </div>
+            <h5>Apellidos</h5>
+            <input type="text" name="apellido" placeholder="Digite los apellidos" id="tes">
+            <div id="span3">
+                <span>
+                    <i class="fa fa-id-card" aria-hidden="true"></i>
+                </span>
+                </div>
+            <h5>Numero de documento</h5>
+            <input type="text" name="cc" placeholder="Digite el numero" id="tes">
+            <div id="span3">
+                <span>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                </span>
+                 </div>
+            <h5>Correo</h5>
+            <input type="email" name="correo" placeholder="Digite el correo" id="tes">
+            <div id="span3">
+                <span>
+                    <i class="fa fa-eye" aria-hidden="true" id="eye2" onclick="toggle()"></i>
+                </span>
+                </div>
+            <h5>Contraseña</h5>
+
+            <input type="password" name="contrasena" placeholder="Digite la contraseña" id="password">
+            
+            <div class="po">
+            <button class="offset">Crear</button>
+            </div>
+
+        </form>
+        <form action="inicio.html" method="post">
+            <div class="pa">
+            <button class="offset">Regresar</button>
+            </div>
+        </form>
+    </div>
+
+   
+
+    <script>
+        var state = false;
+        function toggle() {
+            if (state) {
+                document.getElementById("password").
+                    setAttribute("type", "password");
+                document.getElementById("eye2").style.color = '#7a797e';
+                state = false;
+            }
+
+            else {
+                document.getElementById("password").
+                    setAttribute("type", "text");
+                document.getElementById("eye2").style.color = '#39a900';
+                state = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
